@@ -41,8 +41,8 @@ phases:
           if [ -f "$ADDONSFILE" ]; then
             tmp=$(mktemp)
             timestamp=$(date +%s)
-            aws s3 cp "$ADDONSFILE" "s3://stackset-ecsworkshop-inf-pipelinebuiltartifactbuc-d74pvjegnvhs/manual/$timestamp/$svc.addons.stack.yml";
-            jq --arg a "https://stackset-ecsworkshop-inf-pipelinebuiltartifactbuc-d74pvjegnvhs.s3-eu-west-1.amazonaws.com/manual/$timestamp/$svc.addons.stack.yml" '.Parameters.AddonsTemplateURL = $a' ./infrastructure/$svc-test.params.json > "$tmp" && mv "$tmp" ./infrastructure/$svc-test.params.json
+            aws s3 cp "$ADDONSFILE" "s3://stackset-ecsworkshop-inf-pipelinebuiltartifactbuc-3jb8zqty96f5/manual/$timestamp/$svc.addons.stack.yml";
+            jq --arg a "https://stackset-ecsworkshop-inf-pipelinebuiltartifactbuc-3jb8zqty96f5.s3-eu-west-1.amazonaws.com/manual/$timestamp/$svc.addons.stack.yml" '.Parameters.AddonsTemplateURL = $a' ./infrastructure/$svc-test.params.json > "$tmp" && mv "$tmp" ./infrastructure/$svc-test.params.json
           fi
         done;
       # Build images
